@@ -43,7 +43,7 @@ app.get("/battlelog", async (req, res) => {
 });
 
 // مسار لجلب سجل الدوريات
-app.get("/player/:tag", async (req, res) => {
+app.get("/leaguehistory/:tag", async (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
   const tag = req.params.tag; // ياخذ التاك من الرابط مباشرة
   if (!tag) return res.status(400).json({ error: "Tag is required" });
