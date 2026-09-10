@@ -43,13 +43,13 @@ app.get("/battlelog", async (req, res) => {
 });
 
 // مسار لجلب سجل الدوريات
-app.get("/leaguehistory", async (req, res) => {
+app.get("/player/:tag", async (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
-  const tag = req.query.tag;
+  const tag = req.params.tag; // ياخذ التاك من الرابط مباشرة
   if (!tag) return res.status(400).json({ error: "Tag is required" });
 
   try {
-    const response = await axios.get(`${BASE_URL}/players/%23${tag}/leaguehistory`, {
+    const response = await axios.get(`${BASE_URL}/players/%23${tag}`, {
       headers: { Authorization: `Bearer ${COC_API_KEY}`, Accept: "application/json" }
     });
     return res.status(200).json(response.data);
