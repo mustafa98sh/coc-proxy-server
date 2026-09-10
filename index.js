@@ -4,7 +4,7 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const COC_API_KEY = "ضع_مفتاح_API_الخاص_بك_هنا";
+const COC_API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjE4ZjMyM2VhLWI0MWItNDNjZS1iZjBkLTAzZTY3MzE3MzdiNCIsImlhdCI6MTc4OTA1MjE2Nywic3ViIjoiZGV2ZWxvcGVyL2Q0MWYyMTljLTFkNjgtNGRmNi1iNDVmLThkNjA3NzgzMWIxMiIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjc0LjIyMC40OS4xOCJdLCJ0eXBlIjoiY2xpZW50In1dfQ.SeZh_Vf15iC0V5PM0THP_MvhfsN6aV2cVl1i7bkVNy6WHT5tanMGuSIdFUtWfvIKHnrEdRkYQSINMCq_Fbm_LQ";
 const BASE_URL = "https://api.clashofclans.com/v1";
 
 // طباعة الـ IP الخاص بالسيرفر عند بدء التشغيل لمعرفته
