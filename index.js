@@ -38,6 +38,7 @@ app.get("/", async (req, res) => {
     });
     return res.status(200).json(response.data);
   } catch (error) {
+    console.error("Supercell Error Response:", error.response ? error.response.data : error.message); // <--- أضف هذا السطر
     const statusCode = error.response ? error.response.status : 500;
     const errorData = error.response ? error.response.data : { message: error.message };
     return res.status(statusCode).json(errorData);
