@@ -4,9 +4,21 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ضع مفتاح كلاش أوف كلانس الخاص بك هنا
 const COC_API_KEY = "ضع_مفتاح_API_الخاص_بك_هنا";
 const BASE_URL = "https://api.clashofclans.com/v1";
+
+// طباعة الـ IP الخاص بالسيرفر عند بدء التشغيل لمعرفته
+async function logServerIP() {
+  try {
+    const ipRes = await axios.get("https://api.ipify.org?format=json");
+    console.log("========================================");
+    console.log("MY_RENDER_SERVER_IP: ", ipRes.data.ip);
+    console.log("========================================");
+  } catch (e) {
+    console.log("Could not fetch IP");
+  }
+}
+logServerIP();
 
 app.get("/", async (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
